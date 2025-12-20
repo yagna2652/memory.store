@@ -1,3 +1,20 @@
+/**
+ * Header Component
+ *
+ * Site navigation with two states:
+ * 1. Static header - Always visible at the top of the page
+ * 2. Floating header - Appears when user scrolls past the static header
+ *
+ * Features:
+ * - Responsive: Desktop nav links, mobile hamburger menu
+ * - Smart CTA: "Join Waitlist" scrolls to nearest waitlist form on page
+ * - Translucent floating header with backdrop blur
+ *
+ * @example
+ * <Header /> // On landing page
+ * <Header variant="blog" /> // On blog pages (reserved for future styling)
+ */
+
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -6,6 +23,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 interface HeaderProps {
+  /** Visual variant - reserved for future page-specific styling */
   variant?: "default" | "blog";
 }
 

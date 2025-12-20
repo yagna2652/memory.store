@@ -1,15 +1,33 @@
+/**
+ * FeatureCard Component
+ *
+ * Large promotional card used on the landing page to showcase product features.
+ * Displays a two-column layout with text content and an image/mockup.
+ *
+ * @see src/components/sections/FeaturesSection.tsx - Where these cards are used
+ */
+
 import React from "react";
 import Image from "next/image";
 
 interface FeatureCardProps {
+  /** Card headline - can include JSX for styling (e.g., <span> for emphasis) */
   title: React.ReactNode;
+  /** Supporting description text (1-3 sentences) */
   description: string;
+  /** CTA link text (default: "Learn more") */
   linkText?: string;
+  /** CTA link destination URL */
   linkHref?: string;
+  /** Optional decorative background image URL (displayed at 20% opacity) */
   backgroundImage?: string;
+  /** Feature screenshot/illustration URL - if omitted, shows placeholder mockup */
   image?: string;
+  /** Additional CSS classes for the container */
   className?: string;
+  /** Flip layout: image on left, text on right (default: text left, image right) */
   reverse?: boolean;
+  /** Load image with priority (use for above-fold cards) */
   priority?: boolean;
 }
 

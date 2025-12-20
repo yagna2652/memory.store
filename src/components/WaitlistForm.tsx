@@ -1,18 +1,33 @@
+/**
+ * WaitlistForm Component
+ *
+ * Email capture form for the product waitlist. Handles the complete flow:
+ * 1. User enters email
+ * 2. Form submits to /api/waitlist (server-side validation)
+ * 3. Server normalizes email and forwards to Attio CRM webhook
+ * 4. Success message displayed on completion
+ *
+ * States:
+ * - idle: Ready for input
+ * - submitting: Request in progress (button disabled)
+ * - success: Email captured, shows confirmation message
+ * - error: Something failed, shows retry message
+ *
+ * @see src/app/api/waitlist/route.ts - Server endpoint that processes submissions
+ */
+
 'use client';
 
 import { FormEvent, useState } from 'react';
 
 interface WaitlistFormProps {
+  /** Tracking source for analytics (reserved for future use) */
   source: 'hero' | 'cta';
+  /** HTML id attribute - used by Header to scroll to nearest form */
   id: string;
+  /** Container classes for layout (typically flex row/column) */
   className?: string;
 }
-
-/**
- * Minimal email capture form
- * Submits via standard POST to server normalization layer
- * Server handles email validation, normalization, and Attio webhook forwarding
- */
 export function WaitlistForm({ source: _source, id, className }: WaitlistFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 

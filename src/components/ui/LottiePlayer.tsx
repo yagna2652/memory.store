@@ -1,12 +1,32 @@
+/**
+ * LottiePlayer Component
+ *
+ * Renders Lottie JSON animations with lazy loading.
+ * Fetches animation data from URL at runtime to keep bundle size small.
+ *
+ * Features:
+ * - Lazy loads animation JSON from public folder
+ * - Shows loading spinner while fetching
+ * - Configurable loop and autoplay behavior
+ *
+ * @example
+ * <LottiePlayer src="/hero-animation.json" />
+ * <LottiePlayer src="/icon.json" loop={false} autoplay={false} />
+ */
+
 "use client";
 
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 
 interface LottiePlayerProps {
+  /** Path to Lottie JSON file (relative to public folder) */
   src: string;
+  /** CSS classes for sizing/positioning */
   className?: string;
+  /** Repeat animation continuously (default: true) */
   loop?: boolean;
+  /** Start playing immediately (default: true) */
   autoplay?: boolean;
 }
 
