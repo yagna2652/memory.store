@@ -13,7 +13,7 @@ interface WaitlistFormProps {
  * Submits via standard POST to server normalization layer
  * Server handles email validation, normalization, and Attio webhook forwarding
  */
-export function WaitlistForm({ source, id, className }: WaitlistFormProps) {
+export function WaitlistForm({ source: _source, id, className }: WaitlistFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

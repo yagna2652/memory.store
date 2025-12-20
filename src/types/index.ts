@@ -25,17 +25,5 @@ export interface Guide {
   body?: string;
 }
 
-export interface FeatureCardData {
-  title: string;
-  description: string;
-  linkText: string;
-  linkHref: string;
-  backgroundImage: string;
-  reverse?: boolean;
-}
-
-
-
-
 
 

@@ -8,7 +8,6 @@ interface LottiePlayerProps {
   className?: string;
   loop?: boolean;
   autoplay?: boolean;
-  speed?: number;
 }
 
 export function LottiePlayer({
@@ -16,7 +15,6 @@ export function LottiePlayer({
   className = "",
   loop = true,
   autoplay = true,
-  speed = 1,
 }: LottiePlayerProps) {
   const [animationData, setAnimationData] = useState<object | null>(null);
 
@@ -42,7 +40,6 @@ export function LottiePlayer({
       autoplay={autoplay}
       className={className}
       style={{ width: '100%', height: '100%' }}
-      speed={speed}
     />
   );
 }

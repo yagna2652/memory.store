@@ -38,7 +38,6 @@ export function HeroSection() {
             <LottiePlayer
               src="/hero(lottie).json"
               className="h-full w-full"
-              speed={1.5}
             />
           </div>
         </div>

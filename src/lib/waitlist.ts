@@ -5,7 +5,7 @@
  * it to Attio's webhook. This keeps the Attio webhook URL private and
  * ensures consistent payload formatting.
  */
-export async function submitToWaitlist(email: string, source: 'hero' | 'cta' = 'hero') {
+export async function submitToWaitlist(email: string, _source: 'hero' | 'cta' = 'hero') {
   try {
     // Create FormData to match standard form submission
     const formData = new FormData();
@@ -23,7 +23,7 @@ export async function submitToWaitlist(email: string, source: 'hero' | 'cta' = '
     } else {
       return { success: false, message: result.message || 'Something went wrong. Please try again.' };
     }
-  } catch (error) {
+  } catch {
     return { success: false, message: 'Network error. Please try again.' };
   }
 }

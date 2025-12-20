@@ -5,10 +5,10 @@ import type { Guide } from "@/types";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/Input";
 import { sanityFetch } from "@/lib/sanity";
 import { GUIDES_QUERY } from "@/lib/queries";
-import { calculateReadTime } from "@/lib/utils";
+import { calculateReadTime, formatDateUppercase } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Setup Guides - Connect Your Tools",
@@ -21,14 +21,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).toUpperCase();
-}
 
 export default async function GuidesPage() {
   // Fetch all guides from Sanity
@@ -87,7 +79,7 @@ export default async function GuidesPage() {
                   {/* Content */}
                   <div className="mt-8 text-center">
                     <p className="text-xs tracking-widest text-gray-400">
-                      {formatDate(featuredGuide.publishedAt)}
+                      {formatDateUppercase(featuredGuide.publishedAt)}
                       {featuredGuide.readTime && ` · ${featuredGuide.readTime.toUpperCase()}`}
                     </p>
 
@@ -137,7 +129,7 @@ export default async function GuidesPage() {
                     {/* Content */}
                     <div className="mt-5">
                       <p className="text-xs tracking-widest text-gray-400">
-                        {formatDate(guide.publishedAt)}
+                        {formatDateUppercase(guide.publishedAt)}
                       </p>
 
                       {guide.platform && (

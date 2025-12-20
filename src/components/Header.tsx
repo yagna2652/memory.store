@@ -9,7 +9,7 @@ interface HeaderProps {
   variant?: "default" | "blog";
 }
 
-export function Header({ variant = "default" }: HeaderProps) {
+export function Header({ variant: _variant = "default" }: HeaderProps) {
   const [showFloating, setShowFloating] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const staticHeaderRef = useRef<HTMLElement>(null);

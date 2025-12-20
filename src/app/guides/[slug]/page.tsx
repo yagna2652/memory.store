@@ -7,7 +7,7 @@ import { formatDateUppercase, formatDateShort, calculateReadTime } from "@/lib/u
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/Input";
 import { sanityFetch } from "@/lib/sanity";
 import { GUIDE_BY_SLUG_QUERY, RELATED_GUIDES_QUERY, GUIDE_SLUGS_QUERY } from "@/lib/queries";
 

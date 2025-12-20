@@ -39,7 +39,6 @@ export function FeaturesSection() {
             description={feature.description}
             linkText={feature.linkText}
             linkHref={feature.linkHref}
-            backgroundImage={feature.backgroundImage}
             image={feature.image}
             reverse={feature.reverse}
             priority={index === 0}
@@ -49,9 +48,5 @@ export function FeaturesSection() {
     </section>
   );
 }
-
-
-
-
 
 

@@ -4,18 +4,10 @@ import type { Post } from "@/types";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/Input";
 import { sanityFetch } from "@/lib/sanity";
 import { POSTS_QUERY } from "@/lib/queries";
-import { calculateReadTime } from "@/lib/utils";
-
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).toUpperCase();
-}
+import { calculateReadTime, formatDateUppercase } from "@/lib/utils";
 
 export default async function BlogPage() {
   // Fetch all posts from Sanity
@@ -77,7 +69,7 @@ export default async function BlogPage() {
                   {/* Content */}
                   <div className="mt-8 text-center">
                     <p className="text-xs tracking-widest text-gray-400">
-                      {formatDate(featuredPost.publishedAt)}
+                      {formatDateUppercase(featuredPost.publishedAt)}
                       {featuredPost.readTime && ` · ${featuredPost.readTime.toUpperCase()}`}
                     </p>
                     
@@ -127,7 +119,7 @@ export default async function BlogPage() {
                     {/* Content */}
                     <div className="mt-5">
                       <p className="text-xs tracking-widest text-gray-400">
-                        {formatDate(post.publishedAt)}
+                        {formatDateUppercase(post.publishedAt)}
                       </p>
                       
                       {post.category && (
