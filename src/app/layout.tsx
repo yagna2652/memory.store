@@ -78,6 +78,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${crimsonPro.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-background.webp"
+          type="image/webp"
+        />
+      </head>
       <body className="min-h-screen bg-[#ece9e2] text-black antialiased" suppressHydrationWarning>
         {children}
       </body>

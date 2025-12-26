@@ -79,19 +79,15 @@ export function FeatureCard({
 
         {/* Right - Screen/Visual Placeholder */}
         <div className={`relative flex items-center justify-center p-8 lg:p-12 ${reverse ? "lg:order-1" : ""}`}>
-          {/* Background image */}
-          <div className={`absolute inset-0 overflow-hidden ${reverse ? "rounded-l-3xl" : "rounded-r-3xl"}`}>
-            <Image
-              src="/background-2.jpeg"
-              alt=""
-              fill
-              className="object-cover"
-              priority={priority}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-            />
-          </div>
+          {/* Background image - Using CSS for better caching */}
+          <div
+            className={`absolute inset-0 overflow-hidden ${reverse ? "rounded-l-3xl" : "rounded-r-3xl"}`}
+            style={{
+              backgroundImage: 'url(/hero-background.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
 
           {/* Feature image or mockup placeholder */}
           <div className="relative z-10 w-full max-w-lg">
@@ -102,8 +98,8 @@ export function FeatureCard({
                   alt=""
                   fill
                   className="object-contain"
-                  priority={priority}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading={priority ? "eager" : "lazy"}
+                  sizes="(max-width: 1024px) 100vw, 512px"
                 />
               </div>
             ) : (

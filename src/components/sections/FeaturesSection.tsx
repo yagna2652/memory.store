@@ -1,14 +1,8 @@
 import { FeatureCard } from "@/components/FeatureCard";
+import { IntegrationsOrbit } from "./IntegrationsOrbit";
 
+// Record and Recall features (Connect is now handled by IntegrationsOrbit)
 const features = [
-  {
-    title: "Connect your tools",
-    description:
-      "Memory.store connects your AI tools via MCP, Claude, ChatGPT, Cursor—they share the same context instead of working in isolation. Need a different integration? Talk to us and we'll build it.",
-    linkText: "View setup guides",
-    linkHref: "/guides",
-    image: "/integrations/integrations.png",
-  },
   {
     title: "Record what matters as you work",
     description:
@@ -31,7 +25,11 @@ const features = [
 export function FeaturesSection() {
   return (
     <section id="features" className="py-24">
-      <div className="mx-auto max-w-7xl space-y-12 px-6">
+      {/* Full-width orbital section for integrations */}
+      <IntegrationsOrbit />
+
+      {/* Standard feature cards for Record and Recall */}
+      <div className="mx-auto mt-24 max-w-7xl space-y-12 px-6">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
