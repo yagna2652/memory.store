@@ -92,15 +92,33 @@ export function FeatureCard({
           {/* Feature image or mockup placeholder */}
           <div className="relative z-10 w-full max-w-lg">
             {image ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <Image
-                  src={image}
-                  alt=""
-                  fill
-                  className="object-contain"
-                  loading={priority ? "eager" : "lazy"}
-                  sizes="(max-width: 1024px) 100vw, 512px"
-                />
+              <div className="relative aspect-[4/3]">
+                {/* Screen.png with GIF inside */}
+                <div className="absolute inset-0">
+                  <Image
+                    src="/screen.png"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    loading={priority ? "eager" : "lazy"}
+                    sizes="(max-width: 1024px) 100vw, 512px"
+                  />
+                </div>
+
+                {/* GIF positioned inside screen */}
+                <div className="absolute inset-x-[6%] inset-y-[12%]">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={image}
+                      alt=""
+                      fill
+                      className="object-contain rounded-lg"
+                      loading={priority ? "eager" : "lazy"}
+                      sizes="(max-width: 1024px) 100vw, 512px"
+                      unoptimized={image.endsWith('.gif')}
+                    />
+                  </div>
+                </div>
               </div>
             ) : (
               /* Window chrome */

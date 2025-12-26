@@ -10,7 +10,7 @@ const features = [
     linkText: "Explore Recall",
     linkHref: "#",
     reverse: true,
-    image: "/record.webp",
+    image: "/record.gif",
   },
   {
     title: "Recall anywhere",
@@ -18,7 +18,7 @@ const features = [
       "Context you've already explained. Insights you've already captured. Memory surfaces when you need it—ask directly or let relevant information appear as your conversation unfolds.",
     linkText: "See Connections",
     linkHref: "#",
-    image: "/recall.webp",
+    image: "/recall.gif",
   },
 ];
 
