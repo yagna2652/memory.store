@@ -90,34 +90,33 @@ export function FeatureCard({
           />
 
           {/* Feature image or mockup placeholder */}
-          <div className="relative z-10 w-full max-w-lg">
+          <div className="relative z-10 w-full max-w-xl">
             {image ? (
               <div className="relative aspect-[4/3]">
-                {/* Screen.png with GIF inside */}
-                <div className="absolute inset-0">
+                {/* Screen viewport - TWEAK POSITIONING: Adjust inset-x and inset-y values to align screen area */}
+                {/* Current values: inset-x-[10%] = 10% from left/right, inset-y-[10%] = 10% from top/bottom */}
+                <div className="absolute inset-x-[10%] inset-y-[10%] overflow-hidden rounded-lg">
                   <Image
-                    src="/screen.png"
+                    src={image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    loading={priority ? "eager" : "lazy"}
+                    sizes="(max-width: 1024px) 100vw, 512px"
+                    unoptimized={image.endsWith('.gif')}
+                  />
+                </div>
+
+                {/* Bezel overlay - sits on top with shadows intact, pointer-events-none allows clicks through */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <Image
+                    src="/bezel.png"
                     alt=""
                     fill
                     className="object-contain"
                     loading={priority ? "eager" : "lazy"}
                     sizes="(max-width: 1024px) 100vw, 512px"
                   />
-                </div>
-
-                {/* GIF positioned inside screen */}
-                <div className="absolute inset-x-[6%] inset-y-[12%]">
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={image}
-                      alt=""
-                      fill
-                      className="object-contain rounded-lg"
-                      loading={priority ? "eager" : "lazy"}
-                      sizes="(max-width: 1024px) 100vw, 512px"
-                      unoptimized={image.endsWith('.gif')}
-                    />
-                  </div>
                 </div>
               </div>
             ) : (
