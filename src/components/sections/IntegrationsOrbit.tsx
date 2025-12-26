@@ -10,6 +10,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { integrations } from "@/lib/integrations";
 
@@ -46,17 +47,17 @@ export function IntegrationsOrbit() {
         <p className="mx-auto mt-4 max-w-xl text-lg tracking-[-0.04em] text-gray-600">
           Memory.store connects your AI tools via MCP, Claude, ChatGPT,
           Cursor—they share the same context instead of working in isolation.
-          Need a different integration? Talk to us and we'll build it.
+          Need a different integration? Talk to us and we&apos;ll build it.
         </p>
 
         {/* CTA link below text */}
-        <a
+        <Link
           href="/guides"
           className="mt-6 inline-flex items-center gap-2 font-medium text-black transition-colors hover:text-gray-700"
         >
           View setup guides
           <span className="text-xl text-gray-500">→</span>
-        </a>
+        </Link>
       </div>
 
       {/* Orbital visualization with fade gradients - compact */}

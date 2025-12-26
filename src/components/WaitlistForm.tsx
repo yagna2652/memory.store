@@ -19,6 +19,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { useConfetti } from '@/hooks/useConfetti';
 
 interface WaitlistFormProps {
   /** Tracking source for analytics (reserved for future use) */
@@ -30,6 +31,7 @@ interface WaitlistFormProps {
 }
 export function WaitlistForm({ source: _source, id, className }: WaitlistFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const { fireSideCannons } = useConfetti();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,7 +48,9 @@ export function WaitlistForm({ source: _source, id, className }: WaitlistFormPro
 
       if (response.ok) {
         setStatus('success');
+        fireSideCannons(); // Trigger confetti celebration
         form.reset();
+        // Success state persists for the session - no reset
       } else {
         setStatus('error');
       }
