@@ -19,24 +19,27 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Hero Visual - Background with Lottie - Hidden on mobile */}
+      {/* Hero Visual - Lottie with Bezel - Hidden on mobile */}
       <div className="mx-auto mt-16 hidden w-full max-w-5xl md:block">
-        <div className="relative aspect-[16/10] overflow-hidden rounded-3xl">
-          {/* Background image */}
-          <Image
-            src="/hero-background.webp"
-            alt=""
-            fill
-            className="object-cover"
-            priority
-            quality={85}
-            sizes="(max-width: 768px) 100vw, 1920px"
-          />
-          {/* Lottie animation */}
-          <div className="absolute inset-0 z-10 p-8">
+        <div className="relative aspect-[5/3]">
+          {/* Screen viewport - TWEAK POSITIONING: Adjust inset-x and inset-y values to align screen area */}
+          {/* Current values: inset-x-[15%] = 15% from left/right, inset-y-[13%] = 13% from top/bottom */}
+          <div className="absolute inset-x-[15%] inset-y-[13%] z-10 overflow-hidden rounded-lg">
             <LottiePlayer
               src="/hero(lottie).json"
               className="h-full w-full"
+            />
+          </div>
+
+          {/* Bezel overlay - sits on top with shadows intact, pointer-events-none allows clicks through */}
+          <div className="absolute inset-0 pointer-events-none">
+            <Image
+              src="/bezel.png"
+              alt=""
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 100vw, 1920px"
             />
           </div>
         </div>
