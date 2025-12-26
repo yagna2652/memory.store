@@ -39,29 +39,8 @@ const coordinationTools = [
 export function IntegrationsOrbit() {
   return (
     <section className="w-full py-16 md:py-20">
-      {/* Text content - compact spacing */}
-      <div className="mx-auto max-w-2xl px-6 text-center">
-        <h2 className="font-serif text-4xl leading-tight tracking-[-0.06em] text-black md:text-5xl">
-          Connect your tools
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg tracking-[-0.04em] text-gray-600">
-          Memory.store connects your AI tools via MCP, Claude, ChatGPT,
-          Cursor—they share the same context instead of working in isolation.
-          Need a different integration? Talk to us and we&apos;ll build it.
-        </p>
-
-        {/* CTA link below text */}
-        <Link
-          href="/guides"
-          className="mt-6 inline-flex items-center gap-2 font-medium text-black transition-colors hover:text-gray-700"
-        >
-          View setup guides
-          <span className="text-xl text-gray-500">→</span>
-        </Link>
-      </div>
-
       {/* Orbital visualization with fade gradients - compact */}
-      <div className="relative mt-8 w-full overflow-hidden md:mt-10">
+      <div className="relative w-full overflow-hidden">
         {/* Top fade gradient */}
         <div className="pointer-events-none absolute left-0 top-0 z-30 h-[200px] w-full bg-gradient-to-b from-[#ece9e2] to-transparent md:h-[250px]" />
 
@@ -158,6 +137,27 @@ export function IntegrationsOrbit() {
           ))}
         </OrbitingCircles>
         </div>
+      </div>
+
+      {/* Text content - overlapping the visual above */}
+      <div className="relative -mt-8 z-40 mx-auto max-w-2xl px-6 text-center md:-mt-12">
+        <h2 className="font-serif text-4xl leading-tight tracking-[-0.06em] text-black md:text-5xl">
+          Connect your tools
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl text-lg tracking-[-0.04em] text-gray-600">
+          Memory.store connects your AI tools via MCP, Claude, ChatGPT,
+          Cursor—they share the same context instead of working in isolation.
+          Need a different integration? Talk to us and we&apos;ll build it.
+        </p>
+
+        {/* CTA link below text */}
+        <Link
+          href="/guides"
+          className="mt-6 inline-flex items-center gap-2 font-medium text-black transition-colors hover:text-gray-700"
+        >
+          View setup guides
+          <span className="text-xl text-gray-500">→</span>
+        </Link>
       </div>
     </section>
   );
