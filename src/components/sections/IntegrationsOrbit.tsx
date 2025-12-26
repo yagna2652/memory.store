@@ -37,13 +37,13 @@ const coordinationTools = [
 
 export function IntegrationsOrbit() {
   return (
-    <section className="w-full py-24 md:py-32">
-      {/* Text content */}
+    <section className="w-full py-16 md:py-20">
+      {/* Text content - compact spacing */}
       <div className="mx-auto max-w-2xl px-6 text-center">
         <h2 className="font-serif text-4xl leading-tight tracking-[-0.06em] text-black md:text-5xl">
           Connect your tools
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg tracking-[-0.04em] text-gray-600">
+        <p className="mx-auto mt-4 max-w-xl text-lg tracking-[-0.04em] text-gray-600">
           Memory.store connects your AI tools via MCP, Claude, ChatGPT,
           Cursor—they share the same context instead of working in isolation.
           Need a different integration? Talk to us and we'll build it.
@@ -52,26 +52,32 @@ export function IntegrationsOrbit() {
         {/* CTA link below text */}
         <a
           href="/guides"
-          className="mt-8 inline-flex items-center gap-2 font-medium text-black transition-colors hover:text-gray-700"
+          className="mt-6 inline-flex items-center gap-2 font-medium text-black transition-colors hover:text-gray-700"
         >
           View setup guides
           <span className="text-xl text-gray-500">→</span>
         </a>
       </div>
 
-      {/* Orbital visualization with fade gradients */}
-      <div className="relative mt-16 w-full overflow-hidden md:mt-20">
+      {/* Orbital visualization with fade gradients - compact */}
+      <div className="relative mt-8 w-full overflow-hidden md:mt-10">
         {/* Top fade gradient */}
-        <div className="pointer-events-none absolute left-0 top-0 z-30 h-[250px] w-full bg-gradient-to-b from-[#ece9e2] to-transparent md:h-[300px]" />
+        <div className="pointer-events-none absolute left-0 top-0 z-30 h-[200px] w-full bg-gradient-to-b from-[#ece9e2] to-transparent md:h-[250px]" />
 
         {/* Bottom fade gradient */}
-        <div className="pointer-events-none absolute bottom-0 left-0 z-30 h-[250px] w-full bg-gradient-to-t from-[#ece9e2] to-transparent md:h-[300px]" />
+        <div className="pointer-events-none absolute bottom-0 left-0 z-30 h-[200px] w-full bg-gradient-to-t from-[#ece9e2] to-transparent md:h-[250px]" />
 
-        {/* Orbital container */}
-        <div className="relative z-0 mx-auto flex h-[600px] w-full max-w-4xl items-center justify-center overflow-hidden md:h-[750px]">
-        {/* Central placeholder logo */}
+        {/* Orbital container - reduced height */}
+        <div className="relative z-0 mx-auto flex h-[500px] w-full max-w-4xl items-center justify-center overflow-hidden md:h-[600px]">
+        {/* Central logo */}
         <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-lg md:h-24 md:w-24">
-          <div className="text-3xl md:text-4xl">⚡</div>
+          <Image
+            src="/logo-for-orbit.png"
+            alt="Memory.store"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain md:h-14 md:w-14"
+          />
         </div>
 
         {/* Chat tools - Innermost orbit (slowest) */}
