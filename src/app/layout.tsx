@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://memory.store"),
   title: {
-    default: "memory.store - Your personal memory layer",
+    default: "memory.store - your personal memory layer",
     template: "%s | memory.store",
   },
   description:
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://memory.store",
     siteName: "memory.store",
-    title: "memory.store - Your personal memory layer",
+    title: "memory.store - your personal memory layer",
     description:
       "Memory for your entire stack. Sync conversations, snippets, and decisions across your team's tools.",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "memory.store - Your personal memory layer",
+    title: "memory.store - your personal memory layer",
     description:
       "Memory for your entire stack. Sync conversations, snippets, and decisions across your team's tools.",
     images: ["/logo.svg"],
