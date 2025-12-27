@@ -140,7 +140,7 @@ export function IntegrationsOrbit() {
       </div>
 
       {/* Text content - overlapping the visual above */}
-      <div className="relative -mt-8 z-40 mx-auto max-w-2xl px-6 text-center md:-mt-12">
+      <div className="relative -mt-4 z-40 mx-auto max-w-2xl px-6 text-center md:-mt-8">
         <h2 className="font-serif text-4xl leading-tight tracking-[-0.06em] text-black md:text-5xl">
           Connect your tools
         </h2>
